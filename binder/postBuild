@@ -1,15 +1,19 @@
 #!/bin/bash
 
-mkdir -p ~/.local/share/jupyter
+mkdir -p ~/.jupyter
 
-cat > ~/.local/share/jupyter/jupyter_server_config.py << 'EOF'
+cat > ~/.jupyter/jupyter_server_config.py << 'EOF'
 c.ServerProxy.servers = {
-  'code': {
-    'command': ['code-server', '--auth', 'none', '--bind-addr', '0.0.0.0:{port}'],
-    'timeout': 60,
-    'launcher_entry': {
-      'title': 'VS Code'
+    'code': {
+        'command': [
+            'code-server',
+            '--auth', 'none',
+            '--bind-addr', '0.0.0.0:{port}'
+        ],
+        'timeout': 60,
+        'launcher_entry': {
+            'title': 'VS Code'
+        }
     }
-  }
 }
 EOF
