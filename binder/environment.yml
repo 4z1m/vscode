@@ -1,0 +1,13 @@
+name: vscode
+channels:
+  - conda-forge
+
+dependencies:
+  - python=3.12
+  - nodejs
+  - pip
+
+  - pip:
+      - jupyter-server-proxy
+      - jupyterlab
+      - code-server
